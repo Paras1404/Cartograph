@@ -1,0 +1,55 @@
+{
+  "name": "DD_agent",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc --noEmit",
+    "check-types": "tsc --noEmit",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint \"**/*.{ts,js}\"",
+    "lint:fix": "eslint --fix \"**/*.{ts,js}\"",
+    "format": "prettier --write \"**/*.{ts,js,json,md}\"",
+    "format:check": "prettier --check \"**/*.{ts,js,json,md}\"",
+    "test": "vitest --run",
+    "test:watch": "vitest",
+    "dev": "node src/main.ts dev",
+    "start": "node src/main.ts start",
+    "benchmark": "node src/bench/report.ts",
+    "layout-fixture": "node src/bench/layout-fixture.ts",
+    "pronunciation": "node src/bench/pronunciation/run.ts",
+    "latency": "node src/bench/latency.ts",
+    "audit": "node src/bench/audit-session.ts",
+    "addressivity": "node src/bench/addressivity-fixture.ts"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.4",
+    "@repo/typescript-config": "workspace:*",
+    "@trivago/prettier-plugin-sort-imports": "^5.2.2",
+    "@types/node": "^24.10.1",
+    "eslint": "^9.39.4",
+    "globals": "^16.5.0",
+    "jiti": "^2.6.1",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.58.1",
+    "vitest": "^4.1.4"
+  },
+  "dependencies": {
+    "@langchain/core": "^1.2.9",
+    "@langchain/langgraph": "^1.4.14",
+    "@langchain/openai": "^1.5.11",
+    "@livekit/agents": "^1.6.3",
+    "@livekit/agents-plugin-rime": "^1.7.1",
+    "@livekit/plugins-ai-coustics": "^0.2.14",
+    "@livekit/rtc-node": "^0.13.31",
+    "@repo/logger": "workspace:*",
+    "@repo/protocol": "workspace:*",
+    "dotenv": "^17.4.1",
+    "elkjs": "^0.12.0",
+    "livekit-server-sdk": "^2.13.3",
+    "zod": "^4.4.3"
+  }
+}
